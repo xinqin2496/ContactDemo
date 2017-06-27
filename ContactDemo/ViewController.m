@@ -32,11 +32,11 @@
 - (IBAction)addContactsFromSystemBooks:(UIButton *)sender
 {
     if (IOS_VERSION_9_OR_AFTER) {//ios 9 之后
-        
+        NSLog(@"ios9以后");
         [Factory checkAddressBookIOS9AfterAuthorization:^(bool isAuthorized) {
             
             if (isAuthorized) {
-                
+                //调用系统的通讯录界面
                 CNContactPickerViewController *contact = [[CNContactPickerViewController alloc]init];
                 
                 contact.delegate = self;
@@ -47,14 +47,13 @@
                 
                 [self alertControllerToSetup];//这里弹出提示让用户选择跳转到本程序的设置，打开通讯录
                 
-                //[[UIApplication sharedApplication]openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
                 
             }
             
         }];
         
     }else {
-        
+        NSLog(@"ios9之前");
         [Factory CheckAddressBookIOS9BeforeAuthorization:^(bool isAuthorized) {
             
             if (isAuthorized) {
@@ -90,6 +89,48 @@
      然后导入框架
      
      **/
+    if (IOS_VERSION_9_OR_AFTER) {//ios 9 之后
+        
+        [Factory checkAddressBookIOS9AfterAuthorization:^(bool isAuthorized) {
+            
+            if (isAuthorized) {
+                
+                
+                [Factory getIOS9AfterContactsSuccess:^(NSArray *contacts) {
+                    
+                    NSLog(@"ios9以后----%@\n",contacts);
+                    
+                }];
+                
+            }else{
+                
+                [self alertControllerToSetup];
+                
+            }
+            
+        }];
+        
+    }else {
+        
+        [Factory CheckAddressBookIOS9BeforeAuthorization:^(bool isAuthorized) {
+            
+            if (isAuthorized) {
+                
+                
+                NSArray *ios9before = [Factory getIOS9BeforeAddressBooks];
+                
+                NSLog(@"ios9before---%@\n",ios9before);
+                
+            }else{
+                
+                [self alertControllerToSetup];
+                
+            }
+            
+        }];
+        
+    }
+   
 }
 
 -(void)alertControllerToSetup
@@ -125,7 +166,7 @@
 - (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController*)peoplePicker didSelectPerson:(ABRecordRef)person
 
 {
-    
+     //这里有许多属性值可以带过来,参考 factory类里面的数组处理
     CFTypeRef abName = ABRecordCopyValue(person, kABPersonFirstNameProperty);
     
     CFTypeRef abLastName = ABRecordCopyValue(person, kABPersonLastNameProperty);
@@ -200,9 +241,9 @@
 //选中与取消选中时调用的方法
 
 - (void)contactPicker:(CNContactPickerViewController *)picker didSelectContact:(CNContact *)contact
-
 {
     
+    //这里有许多属性值可以带过来,参考 factory类里面的数组处理
     NSString * givenName = contact.givenName;
     
     NSString * familyName = contact.familyName;
