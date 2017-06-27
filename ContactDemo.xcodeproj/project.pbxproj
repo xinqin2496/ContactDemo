@@ -13,6 +13,11 @@
 		049654651F024364003C0A5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049654631F024364003C0A5D /* Main.storyboard */; };
 		049654671F024364003C0A5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049654661F024364003C0A5D /* Assets.xcassets */; };
 		0496546A1F024364003C0A5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049654681F024364003C0A5D /* LaunchScreen.storyboard */; };
+		049654731F02454C003C0A5D /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049654721F02454C003C0A5D /* AddressBook.framework */; };
+		049654751F024550003C0A5D /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049654741F024550003C0A5D /* AddressBookUI.framework */; };
+		049654771F024556003C0A5D /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049654761F024556003C0A5D /* Contacts.framework */; };
+		049654791F02455B003C0A5D /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049654781F02455B003C0A5D /* ContactsUI.framework */; };
+		0496547C1F024577003C0A5D /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0496547B1F024577003C0A5D /* Factory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,12 @@
 		049654661F024364003C0A5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		049654691F024364003C0A5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0496546B1F024364003C0A5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		049654721F02454C003C0A5D /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		049654741F024550003C0A5D /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		049654761F024556003C0A5D /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
+		049654781F02455B003C0A5D /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
+		0496547A1F024577003C0A5D /* Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Factory.h; sourceTree = "<group>"; };
+		0496547B1F024577003C0A5D /* Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Factory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +44,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049654791F02455B003C0A5D /* ContactsUI.framework in Frameworks */,
+				049654771F024556003C0A5D /* Contacts.framework in Frameworks */,
+				049654751F024550003C0A5D /* AddressBookUI.framework in Frameworks */,
+				049654731F02454C003C0A5D /* AddressBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +59,7 @@
 			children = (
 				049654591F024363003C0A5D /* ContactDemo */,
 				049654581F024363003C0A5D /* Products */,
+				049654711F02454C003C0A5D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +78,8 @@
 				0496545E1F024363003C0A5D /* AppDelegate.m */,
 				049654601F024364003C0A5D /* ViewController.h */,
 				049654611F024364003C0A5D /* ViewController.m */,
+				0496547A1F024577003C0A5D /* Factory.h */,
+				0496547B1F024577003C0A5D /* Factory.m */,
 				049654631F024364003C0A5D /* Main.storyboard */,
 				049654661F024364003C0A5D /* Assets.xcassets */,
 				049654681F024364003C0A5D /* LaunchScreen.storyboard */,
@@ -77,6 +95,17 @@
 				0496545B1F024363003C0A5D /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		049654711F02454C003C0A5D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				049654781F02455B003C0A5D /* ContactsUI.framework */,
+				049654761F024556003C0A5D /* Contacts.framework */,
+				049654741F024550003C0A5D /* AddressBookUI.framework */,
+				049654721F02454C003C0A5D /* AddressBook.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0496547C1F024577003C0A5D /* Factory.m in Sources */,
 				049654621F024364003C0A5D /* ViewController.m in Sources */,
 				0496545F1F024363003C0A5D /* AppDelegate.m in Sources */,
 				0496545C1F024363003C0A5D /* main.m in Sources */,
@@ -273,6 +303,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ContactDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhengwenqing.ContactDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -284,6 +315,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ContactDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhengwenqing.ContactDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

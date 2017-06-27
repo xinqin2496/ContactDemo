@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,77 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLW-3h-gMg">
+                                <rect key="frame" x="30" y="158" width="40" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="i6b-XR-tam"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ajr-E8-9MM">
+                                <rect key="frame" x="90" y="157.5" width="265" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="F2J-4O-IMG"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G67-s0-jbM">
+                                <rect key="frame" x="90" y="208" width="265" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="BmA-CI-gYa"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaD-GS-Vpn">
+                                <rect key="frame" x="95.5" y="318" width="184" height="30"/>
+                                <state key="normal" title="根据系统版本从通讯录导入"/>
+                                <connections>
+                                    <action selector="addContactsFromSystemBooks:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nGc-kl-7NO"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="电话:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dko-PP-cf2">
+                                <rect key="frame" x="30" y="208" width="40" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="gbR-jl-J76"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JaD-GS-Vpn" firstAttribute="top" secondItem="G67-s0-jbM" secondAttribute="bottom" constant="80" id="AzM-on-hJs"/>
+                            <constraint firstItem="Dko-PP-cf2" firstAttribute="top" secondItem="lLW-3h-gMg" secondAttribute="bottom" constant="20" id="G3Q-ww-8lW"/>
+                            <constraint firstItem="Ajr-E8-9MM" firstAttribute="leading" secondItem="lLW-3h-gMg" secondAttribute="trailing" constant="20" id="JZ1-hi-B9n"/>
+                            <constraint firstItem="G67-s0-jbM" firstAttribute="leading" secondItem="Dko-PP-cf2" secondAttribute="trailing" constant="20" id="NVf-t4-QFA"/>
+                            <constraint firstItem="JaD-GS-Vpn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Uij-MB-hF7"/>
+                            <constraint firstItem="Dko-PP-cf2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="ep5-e2-lHI"/>
+                            <constraint firstItem="lLW-3h-gMg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="gvG-qE-vtq"/>
+                            <constraint firstItem="G67-s0-jbM" firstAttribute="centerY" secondItem="Dko-PP-cf2" secondAttribute="centerY" id="hjT-Mr-dqy"/>
+                            <constraint firstAttribute="trailing" secondItem="G67-s0-jbM" secondAttribute="trailing" constant="20" id="i1M-aJ-KTR"/>
+                            <constraint firstItem="G67-s0-jbM" firstAttribute="height" secondItem="Dko-PP-cf2" secondAttribute="height" id="j4l-Ua-hEv"/>
+                            <constraint firstItem="Ajr-E8-9MM" firstAttribute="height" secondItem="lLW-3h-gMg" secondAttribute="height" id="naO-d7-JbW"/>
+                            <constraint firstItem="JaD-GS-Vpn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sjf-Zk-RLW"/>
+                            <constraint firstItem="Ajr-E8-9MM" firstAttribute="centerY" secondItem="lLW-3h-gMg" secondAttribute="centerY" id="wzQ-60-rge"/>
+                            <constraint firstAttribute="trailing" secondItem="Ajr-E8-9MM" secondAttribute="trailing" constant="20" id="y0P-3i-Nas"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameTF" destination="Ajr-E8-9MM" id="53K-YD-eal"/>
+                        <outlet property="phoneTF" destination="G67-s0-jbM" id="I9i-01-ow3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
         </scene>
     </scenes>
 </document>
